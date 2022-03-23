@@ -21,8 +21,9 @@ namespace ExpandableListView
         }
         private void HeaderTapped(object sender, EventArgs args)
         {
+            var te = (TappedEventArgs)args;
             int selectedIndex = _expandedGroups.IndexOf(
-                ((GroupModel)((Button)sender).CommandParameter));
+                ((GroupModel)te.Parameter));
             _allGroups[selectedIndex].Expanded = !_allGroups[selectedIndex].Expanded;
             UpdateListContent();
         }
@@ -32,10 +33,8 @@ namespace ExpandableListView
             _expandedGroups = new ObservableCollection<GroupModel>();
             foreach (GroupModel group in _allGroups)
             {
-                //Create new FoodGroups so we do not alter original list
                 GroupModel newGroup = new GroupModel(group.Title, group.Expanded);
-                //Add the count of food items for Lits Header Titles to use
-              
+
                 if (group.Expanded)
                 {
                     foreach (ItemModel item in group)

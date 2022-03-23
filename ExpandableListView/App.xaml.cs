@@ -1,6 +1,6 @@
-﻿using System;
+﻿
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+
 
 namespace ExpandableListView
 {
@@ -10,7 +10,7 @@ namespace ExpandableListView
         {
             InitializeComponent();
 
-            MainPage = new Page1();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

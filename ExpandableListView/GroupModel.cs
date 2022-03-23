@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 
 namespace ExpandableListView
 {
@@ -28,7 +25,7 @@ namespace ExpandableListView
 
         public string StateIcon
         {
-            get { return Expanded ? "⇓" : "⇑"; }
+            get { return Expanded ? "\uf140" : "\uf143"; }
         }
 
         public GroupModel(string title, bool expanded = true)
@@ -42,15 +39,18 @@ namespace ExpandableListView
         static GroupModel()
         {
             ObservableCollection<GroupModel> Groups = new ObservableCollection<GroupModel>{
-                new GroupModel("Mobile"){
-                    new ItemModel { Name = "Iphone" },
-                    new ItemModel { Name = "Samsung" },
+                new GroupModel("Smart Phone"){
+                    new ItemModel { Name = "Apple" },
+                    new ItemModel { Name = "LG" },
                     new ItemModel { Name = "MI" },
+                    new ItemModel { Name = "Samsung" },
+                    new ItemModel { Name = "Sony" },
                    
                 },
                 new GroupModel("Laptop"){
-                   new ItemModel { Name = "Mac" },
+                   new ItemModel { Name = "Apple" },
                    new ItemModel { Name = "Dell" },
+                   new ItemModel { Name = "Acer" },
                 },
                };
             All = Groups;

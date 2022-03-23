@@ -15,6 +15,7 @@ namespace ExpandableListView
         public ICommand TapCommand { get; set; }
         public Page1()
         {
+            //Just for demo purpose,no related to this topic
             BindingContext = this;
             InitializeComponent();
             List<ItemModel> itemModels = new List<ItemModel>();
